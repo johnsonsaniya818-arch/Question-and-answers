@@ -1,0 +1,21 @@
+#api call for creating user
+###
+POST 
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"Password@123",
+    "email":"d@gmaul.com",
+    "phone":"9782145104"
+}
+
+#api call for Token
+###
+POST 
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"Password@123"
+}
