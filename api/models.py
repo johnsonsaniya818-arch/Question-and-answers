@@ -14,6 +14,8 @@ class Questions(models.Model):
 
     query=models.TextField()  
 
+    image=models.ImageField(upload_to="question_images",null=True,blank=True)
+
 
     def __str__(self):
         return self.query
@@ -38,6 +40,8 @@ class UpVote(models.Model):
 
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name="upvotes")
 
-    query=models.ForeignKey(Questions,on_delete=models.CASCADE,related_name="upvotes")
-
     created_at=models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+
+        unique_together=("user","solution")
